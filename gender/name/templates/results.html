@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<div class="card text-center">
+  <div class="card-body" style="background-color:#ff8614;">
+    <hr/>
+    <p class="card-text"><div class="alert alert-danger" role="alert">您输入的姓名：
+  {{ name }}</div></p>
+    <!--  进行预测-->
+    {% if prediction ==  0 %}
+    <p class="card-text"><div class="alert alert-danger" role="alert">预测结果：
+  这是女生
+</div></p>
+
+
+     {% elif prediction == 1 %}
+	<p class="card-text"><div class="alert alert-danger" role="alert">预测结果：
+  这是男生
+</div></p>
+    {% endif%}
+  </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
